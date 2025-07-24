@@ -28,6 +28,19 @@
 <div class="final-result" id="finalContainer"></div>
 
 <script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+<script>
   let scenarioContainer, resultContainer, finalContainer, actionDetails, threatSummary;
   let currentScenario = 0;
   let totalScore = 0;
